@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Задача 3 - Layout 1</title>
+    <style type="text/css">
+      html,
+      body {
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+      }
+      div {
+        padding: 0px;
+        text-align: center;
+        font-family: Verdana;
+        font-size: 15px;
+        font-weight: bold;
+        line-height: 40px;
+      }
+      #header,
+      #footer {
+        background-color: #c0c0c0;
+        width: 100%;
+        height: 5%;
+      }
+      #menu {
+        background-color: #5555ff;
+        color: white;
+        height: 90%;
+        width: 20%;
+        float: left;
+      }
+      #content {
+        height: 90%;
+        width: 80%;
+        float: right;
+        background-color: #ffddaa;
+      }
+
+      @media only screen and (max-width: 600px) {
+        #menu {
+            clear: left;
+            width: 100%;
+            height: 20%;
+        }
+        #content{
+            clear: right;
+            width: 100%;
+        
+        }
+
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="header">Хедър</div>
+    <div id="menu">Основно меню</div>
+    <div id="content">Съдържание на страницата</div>
+    <div id="footer">Футър</div>
+  </body>
+</html>

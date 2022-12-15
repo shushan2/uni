@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        td{
+            min-width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Задача 1</p>
+        <table>
+            <tr>
+                <th>Име</th>
+                <th>Дисциплина</th>
+                <th>Оценка</th>
+            </tr>
+            <tr>
+                <td>Миглена Иванова</td>
+                <td>Уеб дизайн</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Камен Петров</td>
+                <td>компютърна графика</td>
+                <td>4</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div>
+        <p>Задача 2</p>
+        <table>
+            <tr>
+                <th>Име</th>
+                <th colspan="2">Дисциплина</th>
+            </tr>
+            <tr>
+                <td rowspan="2">Миглена Иванова</td>
+                <td>Уеб дизайн</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>компютърна графика</td>
+                <td>4</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

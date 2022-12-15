@@ -1,0 +1,42 @@
+body{
+    background-color: #eeeeee;
+}
+
+h2{
+    color: red;
+    text-align: center;
+}
+
+.blue{
+    color: blue;
+    font-weight: bold;
+}
+
+.blackBack{
+    background-color: black;
+    color: white;
+}
+
+.yellowBack{
+    background-color: yellow;
+    color: red;
+}
+
+.redBack{
+    background-color: red;
+    color: white;
+}
+
+.footer{
+    background-color: blanchedalmond;
+}
+
+a:link, a:visited{
+    text-decoration: none;
+}
+
+a:hover{
+    color: red;
+    text-decoration: underline;
+    font-weight: bold;
+}

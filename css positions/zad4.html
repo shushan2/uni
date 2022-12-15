@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Задача 4 - Layout 2</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+
+      #container {
+        width: 1000px;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+      }
+
+      #nav {
+        width: 200px;
+        height: 100%;
+        background-color: blue;
+        float: left;
+      }
+
+      #content {
+        width: 800px;
+        height: 100%;
+        background-color: wheat;
+        float: right;
+      }
+
+      #nav {
+        text-align: right;
+        padding: 0 10px 0 10px;
+      }
+      #nav > p{
+        margin: 10px 0 0 0;
+        color: white;
+      }
+
+      #nav ul{
+        list-style-type: none;
+      }
+
+      #nav ul > li {
+        margin: 5px;
+      }
+      #nav ul > li > a {
+        color: wheat;
+      }
+
+      #content {
+        text-align: center;
+      }
+
+      h1{
+        color: red;
+        margin: 10px;
+      }
+
+      #content > p, a{
+        color: blue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="nav">
+        <ul>
+          <li><a href="#">Хипервръзка 1</a></li>
+          <li><a href="#">Хипервръзка 2</a></li>
+          <li><a href="#">Хипервръзка 3</a></li>
+        </ul>
+        <p>обектите са дясно подравнени</p>
+      </div>
+      <div id="content">
+        <h1>Разположение в две колони</h1>
+        <p>Текст текст текст...</p>
+        <p>Текст текст текст...</p>
+        <p>Текст текст текст...</p>
+        <p><a href="#">Хипервръзка, сочеща към Луната :)</a></p>
+        <p></p>
+      </div>
+    </div>
+  </body>
+</html>

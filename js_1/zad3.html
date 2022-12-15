@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Задача 3 - Проверка на данни</title>
+    <style type="text/css">
+      body {
+        font-family: Verdana, Arial;
+        font-size: 14px;
+      }
+
+      .tf {
+        border: 1px solid #707070;
+        font-size: 14px;
+        margin: 2px;
+      }
+
+      .center {
+        text-align: center;
+      }
+
+      .leftCol {
+        text-align: right;
+      }
+
+      .bold {
+        font-weight: bold;
+      }
+
+      .title {
+        font-weight: bold;
+        padding: 3px 0px;
+        border-bottom: 1px solid black;
+      }
+
+      .err {
+        color: red;
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>
+      <span class="title">Проверка на данни от формуляр</span>
+    </p>
+    <!-- action="http://nw65-1.ecs.uni-ruse.bg/students/WebDsn/WebDsn15-8/dumprequest.php" -->
+
+    <form name="profile" method="post" id="form" onsubmit="return validate()" action="http://nw65-1.ecs.uni-ruse.bg/students/WebDsn/WebDsn15-8/dumprequest.php">
+      <table border="0">
+        <tr>
+          <td class="leftCol">Email:</td>
+          <td>
+            <input class="tf" type="text" name="email" id="email" size="20" />
+            <span class="hidden err" id="emailErr">Invalid email</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="leftCol">Парола:</td>
+          <td>
+            <input class="tf" type="password" name="pwd1" id="pwd1" size="15" />
+            <span class="hidden err" id="pass1Err"
+              >Password is empty or mismatch</span
+            >
+          </td>
+        </tr>
+        <tr>
+          <td class="leftCol">Потвърдете <br />паролата:</td>
+          <td>
+            <input class="tf" type="password" name="pwd2" id="pwd2" size="15" />
+            <span class="hidden err" id="pass2Err"
+              >Password is empty or mismatch</span
+            >
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input type="checkbox" name="agree" id="agree" value="y" /> Съгласен
+            съм с общите условия
+            <span class="hidden err" id="agreeErr">Not agreed</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="center">
+            <input type="submit" value="Регистрирай" />
+          </td>
+        </tr>
+      </table>
+    </form>
+
+    <script>
+      let err = false;
+
+      function validate() {
+        let email = trimSpace(form["email"].value);
+        let pass1 = trimSpace(form["pwd1"].value);
+        let pass2 = trimSpace(form["pwd2"].value);
+        let agree = form["agree"].checked;
+
+        document.getElementById("emailErr").classList.add("hidden");
+        document.getElementById("pass1Err").classList.add("hidden");
+        document.getElementById("pass2Err").classList.add("hidden");
+        document.getElementById("agreeErr").classList.add("hidden");
+
+        err = false;
+
+        if (email == "") {
+          document.getElementById("emailErr").classList.remove("hidden");
+          err = true;
+        }
+
+        if(pass1 == ""){
+          document.getElementById("pass1Err").classList.remove("hidden");
+          err = true;
+        }
+
+        if(pass2 == ""){
+          document.getElementById("pass2Err").classList.remove("hidden");
+          err = true;
+        }
+
+        if(pass1 != pass2){
+          document.getElementById("pass1Err").classList.remove("hidden");
+          document.getElementById("pass2Err").classList.remove("hidden");
+          err = true;
+        }
+
+        if(agree == false){
+          document.getElementById("agreeErr").classList.remove("hidden");
+          err = true;
+        }  
+
+        return !err;
+      }
+
+      // let form = document.getElementById("form");
+
+      // form.addEventListener("submit", (e) => {
+      //   e.preventDefault();
+
+      //   let email = trimSpace(form["email"].value);
+      //   let pass1 = trimSpace(form["pwd1"].value);
+      //   let pass2 = trimSpace(form["pwd2"].value);
+      //   let agree = form["agree"].checked;
+
+      //   if (email == "") {
+      //     document.getElementById("emailErr").classList.remove("hidden");
+      //   }
+
+      //   if(pass1 == ""){
+      //     document.getElementById("pass1Err").classList.remove("hidden");
+      //   }
+
+      //   if(pass2 == ""){
+      //     document.getElementById("pass2Err").classList.remove("hidden");
+      //   }
+
+      //   if(pass1 != pass2){
+      //     document.getElementById("pass1Err").classList.remove("hidden");
+      //     document.getElementById("pass2Err").classList.remove("hidden");
+      //   }
+
+      //   if(agree == false){
+      //     document.getElementById("agreeErr").classList.remove("hidden");
+      //   }
+      // });
+
+      function trimSpace(str) {
+        let t = String(str);
+        return t.replace(/\s/g, "");
+      }
+    </script>
+  </body>
+</html>
